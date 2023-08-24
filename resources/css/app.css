@@ -1,0 +1,10 @@
+body {
+    height: 85vh;
+}
+
+.hidd {
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
