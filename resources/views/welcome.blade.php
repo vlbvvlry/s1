@@ -23,9 +23,23 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 @foreach ($pictures as $pic)
+                    <div class="modal fade" id="modal_{{ $pic->id }}" tabindex="-1"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <x-modal>
+                            <img src="{{ $pic->url }}" class="card-img-top" alt="..." width=""
+                                height="">
+                            <form method="POST" action=" ">
+                                <input type="hidden" name="id" value="{{ $pic->id }}">
+                                <button class="btn btn-danger my-4 w-100">Удалить</button>
+                            </form>
+                        </x-modal>
+                    </div>
                     <x-picture>
-                        <img src="{{ $pic->url }}" class="card-img-top" alt="..." 
-                        width="" height="">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#modal_{{ $pic->id }}"
+                            onclick="return false;">
+                            <img src="{{ $pic->url }}" class="card-img-top" alt="..." width=""
+                                height="">
+                        </button>
                     </x-picture>
                 @endforeach
             </div>
