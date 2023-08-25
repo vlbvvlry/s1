@@ -28,7 +28,8 @@
                         <x-modal>
                             <img src="{{ $pic->url }}" class="card-img-top" alt="..." width=""
                                 height="">
-                            <form method="POST" action=" ">
+                            <form method="POST" action="{{ route('picture.remove') }}">
+                                @csrf
                                 <input type="hidden" name="id" value="{{ $pic->id }}">
                                 <button class="btn btn-danger my-4 w-100">Удалить</button>
                             </form>

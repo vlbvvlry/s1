@@ -16,4 +16,5 @@ use App\Http\Controllers\PictureController;
 */
 
 Route::get('/', [GalleryController::class, 'show'])->name('gallery.show');
-Route::post('/', [PictureController::class, 'store'])->name('picture.store');
+Route::post('/add', [PictureController::class, 'store'])->name('picture.store');
+Route::post('/remove', [PictureController::class, 'remove'])->name('picture.remove');
