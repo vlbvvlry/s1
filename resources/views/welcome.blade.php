@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Gallery</title>
-    {{-- 0.0.0.0? What the fuck? --}}
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <script type="module" src="http://localhost:5173/@@vite/client"></script>
-    <link rel="stylesheet" href="http://localhost:5173/resources/css/app.css">
-    <script type="module" src="http://localhost:5173/resources/js/app.js"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -23,8 +19,7 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 @foreach ($pictures as $pic)
-                    <div class="modal fade" id="modal_{{ $pic->id }}" tabindex="-1"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="modal_{{ $pic->id }}" tabindex="-1">
                         <x-modal>
                             <img src="{{ $pic->url }}" class="card-img-top" alt="..." width=""
                                 height="">
