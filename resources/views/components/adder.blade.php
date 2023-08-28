@@ -9,7 +9,7 @@
                 @csrf
                 <input type="hidden" name="MAX_FILE_SIZE" value="999000">
                 <p>
-                    <label for="file_upload" class="btn btn-secondary">Выбрать картинку..</label>
+                    <label for="file_upload" class="btn btn-dark">Выбрать картинку..</label>
                     <input type="file"  class="hidd"
                      name="userfile" accept=".jpg,,jpeg,.png" id="file_upload">
                 </p>
